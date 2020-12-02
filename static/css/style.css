@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap');
+html {
+    font-family: 'Inter', sans-serif;
+}
+
+.btnsubmit {
+    width: 100%;
+    margin-top: 30px;
+    height: 60px;
+    border-radius: 10px;
+    border: none;
+    background-color: #FFFFFF;
+    color: #6360FF;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: .5s;
+    margin-top: 25px;
+    letter-spacing: 4px;
+}
+
+.form-nomeja {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: #6360FF;
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+    border: none;
+    border-radius: 10px;
+}
+
+.form-nomeja .image-logo {
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    width: 60px;
+}
+
+.form-nomeja .user-box {
+    position: relative;
+}
+
+.form-nomeja .user-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+    border-radius: 0px;
+}
+
+.form-nomeja .user-box label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #ffffff99;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.form-nomeja .user-box input:focus~label,
+.form-nomeja .user-box input:valid~label {
+    top: -20px;
+    left: 0;
+    color: #FFFFFF;
+    font-size: 12px;
+}
+
+/* DELETED SOON */
+body {
+    background: #D8E0FF;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+#message-container {
+    width: 80%;
+    max-width: 1200px;
+}
+
+
+#send-container {
+    position: fixed;
+    padding-bottom: 30px;
+    bottom: 0;
+    max-width: 1200px;
+    width: 80%;
+    display: flex;
+}
+
+#message-input {
+    flex-grow: 1;
+}
+
+/* DELETED SOON */
+
+.other-messages {
+    background-color: #6360FF;
+    margin-bottom: 20px;
+    color: #FFFFFF;
+    /* display: table; */
+    max-width: 48%;
+    padding: 10px 20px 10px 20px;
+    border-radius: 0 10px 10px 10px;
+}
+
+.self-messages {
+    background-color: #FFF;
+    margin-bottom: 20px;
+    /* display: table; */
+    padding: 10px 20px 10px 20px;
+    border-radius: 10px 0px 10px 10px;
+    max-width: 48%;
+}
+
+.connect-messages {
+    background-color: #CCC;
+    /* display: table; */
+    text-align: center;
+    font-size: 13px;
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+    margin: 10px auto;
+}
