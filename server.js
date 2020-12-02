@@ -13,6 +13,9 @@ const rooms = {}
 app.use(express.static(__dirname + '/static'));
 
 app.get('/', (req, res) => {
+  res.writeHead(200, {
+    'Access-Control-Allow-Origin': '*'
+  });
   res.render('index', { rooms: rooms })
 })
 
@@ -21,6 +24,9 @@ app.post('/room', (req, res) => {
     return res.redirect(req.body.room)
   }
   rooms[req.body.room] = { users: {} }
+  res.writeHead(200, {
+    'Access-Control-Allow-Origin': '*'
+  });
   res.redirect(req.body.room)
   // Send message that new room was created
   io.emit('room-created', req.body.room)
@@ -30,6 +36,9 @@ app.get('/:room', (req, res) => {
   if (rooms[req.params.room] == null) {
     return res.redirect('/')
   }
+  res.writeHead(200, {
+    'Access-Control-Allow-Origin': '*'
+  });
   res.render('room', { roomName: req.params.room })
 })
 
