@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Nom Nom Chat",
   "main": "index.js",
+  "engines": {
+    "node": "12.18.0"
+  },
   "scripts": {
     "start": "node server.js",
     "devStart": "nodemon server.js"
