@@ -22,7 +22,7 @@ if (messageForm != null) {
       if(message === "") {
         return
       } else {
-        appendSelfMessage(`You: ${message}`)
+        appendSelfMessage(message, 'You')
         socket.emit('send-chat-message', roomName, message)
         messageInput.value = ''
       }
@@ -39,7 +39,7 @@ socket.on('room-created', room => {
 })
 
 socket.on('chat-message', data => {
-  appendMessage(`${data.name}: ${data.message}`)
+  appendMessage(data.message, data.name)
 })
 
 socket.on('user-connected', name => {
@@ -50,10 +50,15 @@ socket.on('user-disconnected', name => {
   appendConnection(`${name} disconnected`)
 })
 
-function appendMessage(message) {
+function appendMessage(message, sender) {
   const messageElement = document.createElement('div')
+  const senderElement = document.createElement('h6')
+
   messageElement.className = 'other-messages float-left'
   messageElement.innerText = message
+  senderElement.innerText = sender
+
+  messageContainer.append(senderElement)
   messageContainer.append(messageElement)
   messageContainer.append(document.createElement('br'))
   messageContainer.append(document.createElement('br'))
@@ -68,10 +73,16 @@ function appendConnection(message) {
   messageContainer.append(document.createElement('br'))
 }
 
-function appendSelfMessage(message) {
+function appendSelfMessage(message, sender) {
   const messageElement = document.createElement('div')
+  const senderElement = document.createElement('h6')
+
   messageElement.className = 'self-messages float-right'
   messageElement.innerText = message
+  senderElement.innerText = sender
+  senderElement.className = 'aligntextright'
+
+  messageContainer.append(senderElement)
   messageContainer.append(messageElement)
   messageContainer.append(document.createElement('br'))
   messageContainer.append(document.createElement('br'))
