@@ -1,12 +1,7 @@
 const express = require('express')
 const app = express()
 const server = require('http').createServer(app)
-const io = require('socket.io')(server, {
-  cors: {
-    origin: "https://nomnomchat.azurewebsites.net/",
-    methods: ["GET", "POST"]
-  }
-})
+const io = require('socket.io')(server, { origins: '*:*'})
 
 app.set('views', './views')
 app.set('view engine', 'ejs')
